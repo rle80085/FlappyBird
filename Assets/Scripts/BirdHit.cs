@@ -17,6 +17,7 @@ public class BirdHit : MonoBehaviour
             collision.gameObject.SetActive(false);
             HitSound.Play();
             Time.timeScale = 0;
+            AudioListener.pause = true;
         }
     }
 }
