@@ -4,18 +4,19 @@ using UnityEngine;
 
 public class BirdHit : MonoBehaviour
 {
-    public AudioSource HitSound;
+    public AudioSource hitSound;
 
     private void Awake()
     {
-        HitSound = GetComponent<AudioSource>();
+        hitSound = GetComponent<AudioSource>();
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if(collision.gameObject.CompareTag("Bird"))
         {
             collision.gameObject.SetActive(false);
-            HitSound.Play();
+            hitSound.Play();
+
             Time.timeScale = 0;
             AudioListener.pause = true;
         }
