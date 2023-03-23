@@ -20,7 +20,7 @@ public class CameraFallow : MonoBehaviour
     {
         Vector2 CurrentPosition = new Vector2(character.position.x, character.position.y);
 
-        LastPostion = Vector2.Lerp(LastPostion, CurrentPosition, 1 / Smoothing);
+        LastPostion = Vector2.Lerp(LastPostion, CurrentPosition, 1);
 
         transform.position = new Vector3(LastPostion.x, StartPosition.y, offset);
     }

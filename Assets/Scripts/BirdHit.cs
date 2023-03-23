@@ -1,10 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class BirdHit : MonoBehaviour
 {
     public AudioSource hitSound;
+
+
 
     private void Awake()
     {
@@ -17,8 +20,7 @@ public class BirdHit : MonoBehaviour
             collision.gameObject.SetActive(false);
             hitSound.Play();
 
-            Time.timeScale = 0;
-            AudioListener.pause = true;
+            SceneManager.LoadScene(0);
         }
     }
 }
